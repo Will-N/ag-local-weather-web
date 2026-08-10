@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-10T17:57:58.190142+00:00",
+  "generated_at_utc": "2026-08-10T18:02:11.061719+00:00",
   "region": {
     "id": "central_illinois_demo",
     "name": "Central Illinois Demo",
@@ -35,7 +35,7 @@
       "coverage_start_utc": "2026-08-09T12:00:00Z",
       "coverage_end_utc": "2026-08-10T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-10T17:56:41Z"
+      "source_last_modified_utc": "2026-08-10T18:01:34Z"
     },
     "3day": {
       "period": "3day",
@@ -55,7 +55,7 @@
       "coverage_start_utc": "2026-08-03T12:00:00Z",
       "coverage_end_utc": "2026-08-10T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-10T17:56:46Z"
+      "source_last_modified_utc": "2026-08-10T18:01:39Z"
     },
     "14day": {
       "period": "14day",
@@ -65,7 +65,7 @@
       "coverage_start_utc": "2026-07-27T12:00:00Z",
       "coverage_end_utc": "2026-08-10T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-10T17:56:50Z"
+      "source_last_modified_utc": "2026-08-10T18:01:43Z"
     },
     "30day": {
       "period": "30day",
@@ -75,7 +75,7 @@
       "coverage_start_utc": "2026-07-11T12:00:00Z",
       "coverage_end_utc": "2026-08-10T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-10T17:56:53Z"
+      "source_last_modified_utc": "2026-08-10T18:01:45Z"
     }
   }
 }
