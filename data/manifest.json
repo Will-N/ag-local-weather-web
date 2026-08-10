@@ -1,0 +1,81 @@
+{
+  "generated_at_utc": "2026-08-10T17:42:48.071136+00:00",
+  "region": {
+    "id": "central_illinois_demo",
+    "name": "Central Illinois Demo",
+    "timezone": "America/Chicago",
+    "center": {
+      "lon": -88.24,
+      "lat": 40.12
+    },
+    "radius_miles": 50,
+    "bbox": [
+      -89.27831003950674,
+      39.32278763830005,
+      -87.20168996049325,
+      40.91710230505985
+    ]
+  },
+  "products": {
+    "since12z": {
+      "period": "since12z",
+      "file": "rain_since12z.geojson",
+      "source_date": "2026-08-10T17:03:24+00:00",
+      "cell_count": 1151,
+      "coverage_start_utc": "2026-08-10T12:00:00Z",
+      "coverage_end_utc": "2026-08-10T17:00:00Z",
+      "coverage_method": "noaa_last_modified_rounded_to_hour",
+      "source_last_modified_utc": "2026-08-10T17:03:24Z"
+    },
+    "1day": {
+      "period": "1day",
+      "file": "rain_1day.geojson",
+      "source_date": "2026-08-10",
+      "cell_count": 1151,
+      "coverage_start_utc": "2026-08-09T12:00:00Z",
+      "coverage_end_utc": "2026-08-10T12:00:00Z",
+      "coverage_method": "dated_stageiv_12z_period",
+      "source_last_modified_utc": "2026-08-10T17:41:37Z"
+    },
+    "3day": {
+      "period": "3day",
+      "file": "rain_3day.geojson",
+      "source_date": "2026-08-10",
+      "cell_count": 1151,
+      "coverage_start_utc": "2026-08-07T12:00:00Z",
+      "coverage_end_utc": "2026-08-10T12:00:00Z",
+      "coverage_method": "dated_stageiv_12z_period",
+      "source_last_modified_utc": "2026-08-10T17:41:39Z"
+    },
+    "7day": {
+      "period": "7day",
+      "file": "rain_7day.geojson",
+      "source_date": "2026-08-10",
+      "cell_count": 1151,
+      "coverage_start_utc": "2026-08-03T12:00:00Z",
+      "coverage_end_utc": "2026-08-10T12:00:00Z",
+      "coverage_method": "dated_stageiv_12z_period",
+      "source_last_modified_utc": "2026-08-10T17:41:42Z"
+    },
+    "14day": {
+      "period": "14day",
+      "file": "rain_14day.geojson",
+      "source_date": "2026-08-10",
+      "cell_count": 1151,
+      "coverage_start_utc": "2026-07-27T12:00:00Z",
+      "coverage_end_utc": "2026-08-10T12:00:00Z",
+      "coverage_method": "dated_stageiv_12z_period",
+      "source_last_modified_utc": "2026-08-10T17:41:46Z"
+    },
+    "30day": {
+      "period": "30day",
+      "file": "rain_30day.geojson",
+      "source_date": "2026-08-10",
+      "cell_count": 1151,
+      "coverage_start_utc": "2026-07-11T12:00:00Z",
+      "coverage_end_utc": "2026-08-10T12:00:00Z",
+      "coverage_method": "dated_stageiv_12z_period",
+      "source_last_modified_utc": "2026-08-10T17:41:49Z"
+    }
+  }
+}

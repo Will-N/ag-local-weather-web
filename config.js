@@ -1,0 +1,3 @@
+window.AVLING_WEATHER = {
+  mapboxToken: "MAPBOX_TOKEN_PLACEHOLDER"
+};

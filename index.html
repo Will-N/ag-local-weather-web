@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Avling Local Rainfall — v0.1</title>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.14.0/mapbox-gl.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">AVLING WEATHER • PROTOTYPE</div>
+        <h1>Local Rainfall</h1>
+      </div>
+      <div id="updated" class="updated">Loading…</div>
+    </header>
+
+    <main class="map-shell">
+      <div id="map"></div>
+
+      <div class="layer-card">
+        <div class="periods" id="periods">
+          <button data-period="since12z">Today</button>
+          <button data-period="1day">1D</button>
+          <button data-period="3day">3D</button>
+          <button data-period="7day" class="active">7D</button>
+          <button data-period="14day">14D</button>
+          <button data-period="30day">30D</button>
+        </div>
+        <div class="legend">
+          <span>Rainfall</span>
+          <div class="legend-ramp"></div>
+          <div class="legend-labels"><span>0</span><span>0.5"</span><span>1"</span><span>2"</span><span>4"+</span></div>
+        </div>
+      </div>
+
+      <section id="detail" class="detail-sheet hidden" aria-live="polite">
+        <div class="detail-handle"></div>
+        <div class="detail-label">Rainfall at selected location</div>
+        <div class="detail-value"><span id="detailRain">—</span> <small>in</small></div>
+        <div class="detail-meta" id="detailMeta"></div>
+        <div class="mini-periods" id="miniPeriods"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.14.0/mapbox-gl.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
