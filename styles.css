@@ -74,3 +74,89 @@ h1 { margin:2px 0 0; font-size:24px; font-weight:650; }
   .detail-handle { display:block; width:42px; height:4px; border-radius:999px; background:#bdc6c0; margin:2px auto 10px; }
   .detail-value { font-size:34px; }
 }
+
+
+/* ---------------------------------------------------------
+   Prototype v0.02 — climatology controls
+   --------------------------------------------------------- */
+
+.metric-selector {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:5px;
+  margin-top:9px;
+  padding-top:9px;
+  border-top:1px solid var(--border);
+}
+
+.metric-selector.hidden {
+  display:none;
+}
+
+.metric-selector button {
+  border:0;
+  border-radius:8px;
+  padding:7px 5px;
+  background:#edf1ee;
+  color:var(--text);
+  font-size:12px;
+  font-weight:650;
+  cursor:pointer;
+}
+
+.metric-selector button.active {
+  background:#415b4c;
+  color:white;
+}
+
+
+.detail-context {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:6px;
+  margin-top:10px;
+}
+
+.detail-context:empty {
+  display:none;
+}
+
+.detail-context > div {
+  padding:7px 8px;
+  border-radius:9px;
+  background:#f0f3f1;
+}
+
+.detail-context span {
+  display:block;
+  color:var(--muted);
+  font-size:10px;
+}
+
+.detail-context b {
+  display:block;
+  margin-top:1px;
+  font-size:13px;
+}
+
+
+@media (max-width:640px) {
+
+  .metric-selector button {
+    font-size:11px;
+    padding:7px 2px;
+  }
+
+  .detail-context {
+    grid-template-columns:repeat(4,1fr);
+  }
+
+  .detail-context > div {
+    padding:6px 3px;
+    text-align:center;
+  }
+
+  .detail-context b {
+    font-size:11px;
+  }
+}
