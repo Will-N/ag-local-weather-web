@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-10T19:23:33.860203Z",
+  "generated_at_utc": "2026-08-10T19:25:34.282015Z",
   "region": {
     "id": "central_illinois_demo",
     "name": "Central Illinois Demo",
@@ -79,7 +79,7 @@
     }
   },
   "pipeline": {
-    "run_at_utc": "2026-08-10T19:23:33.860203Z",
+    "run_at_utc": "2026-08-10T19:25:34.282015Z",
     "status": "ok",
     "source": "NOAA Stage IV",
     "products_expected": 6,
