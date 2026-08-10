@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-10T19:15:12.599853+00:00",
+  "generated_at_utc": "2026-08-10T19:23:33.860203Z",
   "region": {
     "id": "central_illinois_demo",
     "name": "Central Illinois Demo",
@@ -35,7 +35,7 @@
       "coverage_start_utc": "2026-08-09T12:00:00Z",
       "coverage_end_utc": "2026-08-10T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-10T19:11:18Z"
+      "source_last_modified_utc": "2026-08-10T19:20:42Z"
     },
     "3day": {
       "period": "3day",
@@ -45,7 +45,7 @@
       "coverage_start_utc": "2026-08-07T12:00:00Z",
       "coverage_end_utc": "2026-08-10T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-10T19:11:20Z"
+      "source_last_modified_utc": "2026-08-10T19:20:44Z"
     },
     "7day": {
       "period": "7day",
@@ -55,7 +55,7 @@
       "coverage_start_utc": "2026-08-03T12:00:00Z",
       "coverage_end_utc": "2026-08-10T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-10T19:11:23Z"
+      "source_last_modified_utc": "2026-08-10T19:20:50Z"
     },
     "14day": {
       "period": "14day",
@@ -65,7 +65,7 @@
       "coverage_start_utc": "2026-07-27T12:00:00Z",
       "coverage_end_utc": "2026-08-10T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-10T19:11:27Z"
+      "source_last_modified_utc": "2026-08-10T19:20:54Z"
     },
     "30day": {
       "period": "30day",
@@ -75,7 +75,24 @@
       "coverage_start_utc": "2026-07-11T12:00:00Z",
       "coverage_end_utc": "2026-08-10T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-10T19:11:29Z"
+      "source_last_modified_utc": "2026-08-10T19:20:56Z"
     }
+  },
+  "pipeline": {
+    "run_at_utc": "2026-08-10T19:23:33.860203Z",
+    "status": "ok",
+    "source": "NOAA Stage IV",
+    "products_expected": 6,
+    "products_built": 6,
+    "products_failed": [],
+    "failures": {},
+    "products_available": [
+      "14day",
+      "1day",
+      "30day",
+      "3day",
+      "7day",
+      "since12z"
+    ]
   }
 }
