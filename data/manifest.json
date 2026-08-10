@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-10T20:19:54.459574Z",
+  "generated_at_utc": "2026-08-10T21:00:42.240083Z",
   "region": {
     "id": "central_illinois_demo",
     "name": "Central Illinois Demo",
@@ -37,7 +37,7 @@
       "coverage_start_utc": "2026-08-09T12:00:00Z",
       "coverage_end_utc": "2026-08-10T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-10T20:16:34Z"
+      "source_last_modified_utc": "2026-08-10T20:55:46Z"
     },
     "3day": {
       "period": "3day",
@@ -48,7 +48,7 @@
       "coverage_start_utc": "2026-08-07T12:00:00Z",
       "coverage_end_utc": "2026-08-10T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-10T20:16:36Z"
+      "source_last_modified_utc": "2026-08-10T20:55:48Z"
     },
     "7day": {
       "period": "7day",
@@ -59,7 +59,7 @@
       "coverage_start_utc": "2026-08-03T12:00:00Z",
       "coverage_end_utc": "2026-08-10T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-10T20:16:40Z"
+      "source_last_modified_utc": "2026-08-10T20:55:51Z"
     },
     "14day": {
       "period": "14day",
@@ -70,7 +70,7 @@
       "coverage_start_utc": "2026-07-27T12:00:00Z",
       "coverage_end_utc": "2026-08-10T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-10T20:16:44Z"
+      "source_last_modified_utc": "2026-08-10T20:55:55Z"
     },
     "30day": {
       "period": "30day",
@@ -81,11 +81,11 @@
       "coverage_start_utc": "2026-07-11T12:00:00Z",
       "coverage_end_utc": "2026-08-10T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-10T20:16:46Z"
+      "source_last_modified_utc": "2026-08-10T20:55:57Z"
     }
   },
   "pipeline": {
-    "run_at_utc": "2026-08-10T20:19:54.459574Z",
+    "run_at_utc": "2026-08-10T21:00:42.240083Z",
     "status": "ok",
     "source": "NOAA Stage IV",
     "products_expected": 6,
