@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-11T10:09:44.906562Z",
+  "generated_at_utc": "2026-08-11T11:04:32.120698Z",
   "region": {
     "id": "central_illinois_demo",
     "name": "Central Illinois Demo",
@@ -20,13 +20,13 @@
     "since12z": {
       "period": "since12z",
       "file": "rain_since12z.geojson",
-      "source_date": "2026-08-11T10:03:33+00:00",
+      "source_date": "2026-08-11T11:03:29+00:00",
       "cell_count": 1151,
       "context_available": true,
       "coverage_start_utc": "2026-08-10T12:00:00Z",
-      "coverage_end_utc": "2026-08-11T10:00:00Z",
+      "coverage_end_utc": "2026-08-11T11:00:00Z",
       "coverage_method": "noaa_last_modified_rounded_to_hour",
-      "source_last_modified_utc": "2026-08-11T10:03:33Z"
+      "source_last_modified_utc": "2026-08-11T11:03:29Z"
     },
     "1day": {
       "period": "1day",
@@ -37,7 +37,7 @@
       "coverage_start_utc": "2026-08-09T12:00:00Z",
       "coverage_end_utc": "2026-08-10T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-11T10:06:08Z"
+      "source_last_modified_utc": "2026-08-11T11:01:37Z"
     },
     "3day": {
       "period": "3day",
@@ -48,7 +48,7 @@
       "coverage_start_utc": "2026-08-07T12:00:00Z",
       "coverage_end_utc": "2026-08-10T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-11T10:06:09Z"
+      "source_last_modified_utc": "2026-08-11T11:01:38Z"
     },
     "7day": {
       "period": "7day",
@@ -59,7 +59,7 @@
       "coverage_start_utc": "2026-08-03T12:00:00Z",
       "coverage_end_utc": "2026-08-10T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-11T10:06:12Z"
+      "source_last_modified_utc": "2026-08-11T11:01:42Z"
     },
     "14day": {
       "period": "14day",
@@ -70,7 +70,7 @@
       "coverage_start_utc": "2026-07-27T12:00:00Z",
       "coverage_end_utc": "2026-08-10T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-11T10:06:16Z"
+      "source_last_modified_utc": "2026-08-11T11:01:46Z"
     },
     "30day": {
       "period": "30day",
@@ -81,11 +81,11 @@
       "coverage_start_utc": "2026-07-11T12:00:00Z",
       "coverage_end_utc": "2026-08-10T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-11T10:06:19Z"
+      "source_last_modified_utc": "2026-08-11T11:01:49Z"
     }
   },
   "pipeline": {
-    "run_at_utc": "2026-08-11T10:09:44.906562Z",
+    "run_at_utc": "2026-08-11T11:04:32.120698Z",
     "status": "ok",
     "source": "NOAA Stage IV",
     "products_expected": 6,
