@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-11T11:12:06.155460Z",
+  "generated_at_utc": "2026-08-11T11:55:47.973573Z",
   "region": {
     "id": "onarga_illinois_demo",
     "name": "Onarga Illinois Demo",
@@ -37,7 +37,7 @@
       "coverage_start_utc": "2026-08-09T12:00:00Z",
       "coverage_end_utc": "2026-08-10T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-11T11:10:52Z"
+      "source_last_modified_utc": "2026-08-11T11:51:01Z"
     },
     "3day": {
       "period": "3day",
@@ -48,7 +48,7 @@
       "coverage_start_utc": "2026-08-07T12:00:00Z",
       "coverage_end_utc": "2026-08-10T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-11T11:10:54Z"
+      "source_last_modified_utc": "2026-08-11T11:51:03Z"
     },
     "7day": {
       "period": "7day",
@@ -59,7 +59,7 @@
       "coverage_start_utc": "2026-08-03T12:00:00Z",
       "coverage_end_utc": "2026-08-10T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-11T11:10:57Z"
+      "source_last_modified_utc": "2026-08-11T11:51:07Z"
     },
     "14day": {
       "period": "14day",
@@ -70,7 +70,7 @@
       "coverage_start_utc": "2026-07-27T12:00:00Z",
       "coverage_end_utc": "2026-08-10T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-11T11:11:01Z"
+      "source_last_modified_utc": "2026-08-11T11:51:11Z"
     },
     "30day": {
       "period": "30day",
@@ -81,11 +81,11 @@
       "coverage_start_utc": "2026-07-11T12:00:00Z",
       "coverage_end_utc": "2026-08-10T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-11T11:11:05Z"
+      "source_last_modified_utc": "2026-08-11T11:51:13Z"
     }
   },
   "pipeline": {
-    "run_at_utc": "2026-08-11T11:12:06.155460Z",
+    "run_at_utc": "2026-08-11T11:55:47.973573Z",
     "status": "ok",
     "source": "NOAA Stage IV",
     "products_expected": 6,
