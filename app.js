@@ -2,20 +2,28 @@ mapboxgl.accessToken = window.AVLING_WEATHER.mapboxToken;
 
 
 const periodLabels = {
-  today: "Current Rainfall",
-  "24h": "24-hour rainfall",
-  "48h": "48-hour rainfall",
-  "72h": "72-hour rainfall",
-  "7day": "7 days",
-  "14day": "14 days",
-  "30day": "30 days"
+today: "Current Rainfall",
+"24h": "24-hour rainfall",
+"48h": "48-hour rainfall",
+"72h": "72-hour rainfall",
+"7day": "7 days",
+"14day": "14 days",
+"30day": "30 days",
+"60day": "60 days",
+"90day": "90 days",
+"120day": "120 days",
+"180day": "180 days"
 };
 
 
 const contextPeriods = new Set([
-  "7day",
-  "14day",
-  "30day"
+"7day",
+"14day",
+"30day",
+"60day",
+"90day",
+"120day",
+"180day"
 ]);
 
 
@@ -156,42 +164,75 @@ async function loadManifest() {
 }
 
 
-function rainColorExpression() {
+const rainfallScales = {
+today:  [0, 0.5, 1, 2, 4],
+"24h":  [0, 0.5, 1, 2, 4],
+"48h":  [0, 0.5, 1, 2, 4],
+"72h":  [0, 0.5, 1, 2, 4],
 
-  return [
-    "interpolate",
-    ["linear"],
-    ["get", "rain"],
+"7day":   [0, 0.75, 1.5, 3, 6],
+"14day":  [0, 1, 2, 4, 8],
+"30day":  [0, 1.25, 2.5, 5, 10],
+"60day":  [0, 2, 4, 8, 15],
+"90day":  [0, 2.5, 5, 10, 20],
+"120day": [0, 3, 6, 12, 25],
+"180day": [0, 4, 8, 16, 35]
+};
 
-    0.00,
-    "rgba(190,255,190,0)",
 
-    0.01,
-    "rgba(190,255,190,0.60)",
+function rainfallScale() {
 
-    0.10,
-    "rgba(125,255,122,0.62)",
+return (
+rainfallScales[currentPeriod]
+|| rainfallScales["72h"]
+);
 
-    0.25,
-    "rgba(35,198,93,0.64)",
-
-    0.50,
-    "rgba(22,139,210,0.65)",
-
-    1.00,
-    "rgba(39,75,216,0.66)",
-
-    2.00,
-    "rgba(217,75,217,0.68)",
-
-    3.00,
-    "rgba(239,65,54,0.70)",
-
-    4.00,
-    "rgba(255,222,61,0.72)"
-  ];
 }
 
+
+function rainColorExpression() {
+
+const scale =
+rainfallScale();
+
+const q1 = scale[1];
+const q2 = scale[2];
+const q3 = scale[3];
+const max = scale[4];
+
+return [
+"interpolate",
+["linear"],
+["get", "rain"],
+
+0.00,
+"rgba(190,255,190,0)",
+
+Math.max(0.01, q1 * 0.20),
+"rgba(190,255,190,0.60)",
+
+q1,
+"rgba(125,255,122,0.62)",
+
+q2,
+"rgba(35,198,93,0.64)",
+
+q3,
+"rgba(22,139,210,0.65)",
+
+max * 0.75,
+"rgba(39,75,216,0.66)",
+
+max * 0.875,
+"rgba(217,75,217,0.68)",
+
+max * 0.95,
+"rgba(239,65,54,0.70)",
+
+max,
+"rgba(255,222,61,0.72)"
+];
+}
 
 function percentNormalColorExpression() {
 
@@ -348,13 +389,28 @@ function updateLegend() {
         #ffde3d 100%
       )`;
 
-    labels.innerHTML = `
-      <span>0</span>
-      <span>0.5"</span>
-      <span>1"</span>
-      <span>2"</span>
-      <span>4"+</span>
-    `;
+    const scale =
+rainfallScale();
+
+const fmt = value => {
+
+if (Number.isInteger(value)) {
+return value.toFixed(0);
+}
+
+return value
+.toFixed(2)
+.replace(/0+$/, "")
+.replace(/\.$/, "");
+};
+
+labels.innerHTML = `
+  <span>0</span>
+  <span>${fmt(scale[1])}"</span>
+  <span>${fmt(scale[2])}"</span>
+  <span>${fmt(scale[3])}"</span>
+  <span>${fmt(scale[4])}"+</span>
+`;
 
     return;
   }
@@ -916,9 +972,9 @@ sourceFamily === "mrms"
     "72h"
   ]
 : [
-    "7day",
-    "14day",
-    "30day"
+    "30day",
+    "90day",
+    "180day"
   ];
 
 const box =
