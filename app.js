@@ -80,7 +80,7 @@ const map = new mapboxgl.Map({
   style:
     "mapbox://styles/mapbox/standard",
 
-  center: [-88.24, 40.12],
+  center: [-88.0062, 40.715],
 
   zoom: 7.4,
 
