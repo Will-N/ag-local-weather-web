@@ -2,9 +2,10 @@ mapboxgl.accessToken = window.AVLING_WEATHER.mapboxToken;
 
 
 const periodLabels = {
-  since12z: "Current Rainfall",
-  "1day": "1 day",
-  "3day": "3 days",
+  today: "Current Rainfall",
+  "24h": "24-hour rainfall",
+  "48h": "48-hour rainfall",
+  "72h": "72-hour rainfall",
   "7day": "7 days",
   "14day": "14 days",
   "30day": "30 days"
@@ -670,146 +671,171 @@ function formatSigned(value) {
 
 function inspectAt(lngLat) {
 
-  selectedLngLat = lngLat;
+selectedLngLat = lngLat;
 
-  const f =
-    findFeatureAt(lngLat);
+const f =
+findFeatureAt(lngLat);
 
-  if (!f) {
-    return;
-  }
+if (!f) {
+return;
+}
 
+const p = f.properties;
 
-  const p = f.properties;
+const label =
+document.getElementById(
+"detailLabel"
+);
 
-  const label =
-    document.getElementById(
-      "detailLabel"
-    );
+const value =
+document.getElementById(
+"detailValue"
+);
 
-  const value =
-    document.getElementById(
-      "detailValue"
-    );
+const unit =
+document.getElementById(
+"detailUnit"
+);
 
-  const unit =
-    document.getElementById(
-      "detailUnit"
-    );
+const context =
+document.getElementById(
+"detailContext"
+);
 
-  const context =
-    document.getElementById(
-      "detailContext"
-    );
+const product =
+manifest.products[currentPeriod];
 
+const sourceFamily =
+product?.source_family;
 
-  if (
-    currentMetric ===
-    "percent_normal"
-  ) {
-
-    label.textContent =
-      "Percent of normal rainfall";
-
-    value.textContent =
-      Number(
-        p.percent_normal
-      ).toFixed(0);
-
-    unit.textContent = "%";
-
-  } else if (
-    currentMetric ===
-    "departure"
-  ) {
-
-    label.textContent =
-      "Rainfall departure from normal";
-
-    value.textContent =
-      formatSigned(
-        p.departure
-      );
-
-    unit.textContent = "in";
-
-  } else {
-
-    label.textContent =
-      "Rainfall at selected location";
-
-    value.textContent =
-      Number(
-        p.rain
-      ).toFixed(2);
-
-    unit.textContent = "in";
-  }
+const validValue = v =>
+Number.isFinite(Number(v)) &&
+Number(v) > -9999;
 
 
-  if (
-    contextPeriods.has(
-      currentPeriod
-    ) &&
-    p.normal != null
-  ) {
+if (
+currentMetric ===
+"percent_normal"
+) {
 
-    context.innerHTML = `
-      <div>
-        <span>Observed</span>
-        <b>${Number(p.rain).toFixed(2)} in</b>
-      </div>
+label.textContent =
+"Percent of normal rainfall";
 
-      <div>
-        <span>Normal</span>
-        <b>${Number(p.normal).toFixed(2)} in</b>
-      </div>
+value.textContent =
+validValue(p.percent_normal)
+? Number(p.percent_normal).toFixed(0)
+: "—";
 
-      <div>
-        <span>Departure</span>
-        <b>${formatSigned(p.departure)} in</b>
-      </div>
+unit.textContent =
+validValue(p.percent_normal)
+? "%"
+: "";
 
-      <div>
-        <span>% Normal</span>
-        <b>${Number(p.percent_normal).toFixed(0)}%</b>
-      </div>
-    `;
+} else if (
+currentMetric ===
+"departure"
+) {
 
-  } else {
+label.textContent =
+"Rainfall departure from normal";
 
-    context.innerHTML = "";
-  }
+value.textContent =
+validValue(p.departure)
+? formatSigned(p.departure)
+: "—";
 
+unit.textContent =
+validValue(p.departure)
+? "in"
+: "";
 
-  document
-    .getElementById(
-      "detailMeta"
-    )
-    .innerHTML =
+} else {
 
-      `${
-        periodLabels[
-          currentPeriod
-        ] || currentPeriod
-      }<br>` +
+label.textContent =
+"Rainfall at selected location";
 
-      `${coverageText(
-        currentPeriod
-      )}<br>` +
+value.textContent =
+validValue(p.rain)
+? Number(p.rain).toFixed(2)
+: "—";
 
-      `${lngLat.lat.toFixed(4)}, ${lngLat.lng.toFixed(4)}`;
+unit.textContent =
+validValue(p.rain)
+? "in"
+: "";
 
-
-  document
-    .getElementById("detail")
-    .classList.remove("hidden");
-
-
-  renderMiniValues(lngLat);
 }
 
 
+if (
+sourceFamily === "stageiv" &&
+contextPeriods.has(currentPeriod) &&
+validValue(p.normal) &&
+validValue(p.departure) &&
+validValue(p.percent_normal)
+) {
+
+context.innerHTML = `
+  <div>
+    <span>Observed</span>
+    <b>${
+      validValue(p.rain)
+        ? Number(p.rain).toFixed(2)
+        : "—"
+    } in</b>
+  </div>
+
+  <div>
+    <span>Normal</span>
+    <b>${Number(p.normal).toFixed(2)} in</b>
+  </div>
+
+  <div>
+    <span>Departure</span>
+    <b>${formatSigned(p.departure)} in</b>
+  </div>
+
+  <div>
+    <span>% Normal</span>
+    <b>${Number(p.percent_normal).toFixed(0)}%</b>
+  </div>
+`;
+
+} else {
+
+context.innerHTML = "";
+
+}
+
+
+document
+.getElementById(
+"detailMeta"
+)
+.innerHTML =
+
+`${
+  periodLabels[currentPeriod] ||
+  currentPeriod
+}<br>` +
+
+`${coverageText(
+  currentPeriod
+)}<br>` +
+
+`Source: ${
+  product?.source_name || "NOAA"
+}<br>` +
+
+`${lngLat.lat.toFixed(4)}, ${lngLat.lng.toFixed(4)}`;
+
+
+document
+.getElementById("detail")
+.classList.remove("hidden");
+
+renderMiniValues(lngLat);
+}
 async function valueAtPeriod(
   period,
   lngLat
@@ -873,54 +899,69 @@ async function valueAtPeriod(
 
 
 async function renderMiniValues(
-  lngLat
+lngLat
 ) {
 
-  const periods = [
-    "1day",
+const product =
+manifest.products[currentPeriod];
+
+const sourceFamily =
+product?.source_family;
+
+const periods =
+sourceFamily === "mrms"
+? [
+    "24h",
+    "48h",
+    "72h"
+  ]
+: [
     "7day",
+    "14day",
     "30day"
   ];
 
-  const box =
-    document.getElementById(
-      "miniPeriods"
-    );
+const box =
+document.getElementById(
+"miniPeriods"
+);
 
-  box.innerHTML = "";
+box.innerHTML = "";
 
+for (const p of periods) {
 
-  for (const p of periods) {
+const val =
+await valueAtPeriod(
+  p,
+  lngLat
+);
 
-    const val =
-      await valueAtPeriod(
-        p,
-        lngLat
-      );
+const valid =
+val != null &&
+Number.isFinite(val) &&
+val > -9999;
 
-    if (val == null) {
-      continue;
-    }
+const el =
+document.createElement(
+  "div"
+);
 
+el.className =
+"mini-chip";
 
-    const el =
-      document.createElement(
-        "div"
-      );
+el.innerHTML = `
+  <span>${periodLabels[p]}</span>
+  <b>${
+    valid
+      ? val.toFixed(2) + '"'
+      : "—"
+  }</b>
+`;
 
-    el.className =
-      "mini-chip";
-
-    el.innerHTML = `
-      <span>${periodLabels[p]}</span>
-      <b>${val.toFixed(2)}"</b>
-    `;
-
-    box.appendChild(el);
-  }
+box.appendChild(el);
 }
 
-
+}
 document
   .getElementById("periods")
   .addEventListener(
