@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-23T07:00:38.289806Z",
+  "generated_at_utc": "2026-08-23T07:48:16.060529Z",
   "region": {
     "id": "onarga_illinois_demo",
     "name": "Onarga Illinois Demo",
@@ -76,7 +76,7 @@
       "coverage_start_utc": "2026-08-15T12:00:00Z",
       "coverage_end_utc": "2026-08-22T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-23T06:56:30Z",
+      "source_last_modified_utc": "2026-08-23T07:46:28Z",
       "resolution": "Stage IV native",
       "units": "inches"
     },
@@ -91,7 +91,7 @@
       "coverage_start_utc": "2026-08-08T12:00:00Z",
       "coverage_end_utc": "2026-08-22T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-23T06:56:33Z",
+      "source_last_modified_utc": "2026-08-23T07:46:30Z",
       "resolution": "Stage IV native",
       "units": "inches"
     },
@@ -106,7 +106,7 @@
       "coverage_start_utc": "2026-07-23T12:00:00Z",
       "coverage_end_utc": "2026-08-22T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-23T06:56:36Z",
+      "source_last_modified_utc": "2026-08-23T07:46:34Z",
       "resolution": "Stage IV native",
       "units": "inches"
     },
@@ -181,7 +181,7 @@
       "coverage_start_utc": "2026-06-23T12:00:00Z",
       "coverage_end_utc": "2026-08-22T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-23T06:56:39Z",
+      "source_last_modified_utc": "2026-08-23T07:46:37Z",
       "resolution": "Stage IV native",
       "units": "inches"
     },
@@ -196,7 +196,7 @@
       "coverage_start_utc": "2026-05-24T12:00:00Z",
       "coverage_end_utc": "2026-08-22T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-23T06:56:42Z",
+      "source_last_modified_utc": "2026-08-23T07:46:40Z",
       "resolution": "Stage IV native",
       "units": "inches"
     },
@@ -211,7 +211,7 @@
       "coverage_start_utc": "2026-04-24T12:00:00Z",
       "coverage_end_utc": "2026-08-22T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-23T06:56:45Z",
+      "source_last_modified_utc": "2026-08-23T07:46:42Z",
       "resolution": "Stage IV native",
       "units": "inches"
     },
@@ -226,13 +226,13 @@
       "coverage_start_utc": "2026-02-23T12:00:00Z",
       "coverage_end_utc": "2026-08-22T12:00:00Z",
       "coverage_method": "dated_stageiv_12z_period",
-      "source_last_modified_utc": "2026-08-23T06:56:49Z",
+      "source_last_modified_utc": "2026-08-23T07:46:47Z",
       "resolution": "Stage IV native",
       "units": "inches"
     }
   },
   "pipeline": {
-    "run_at_utc": "2026-08-23T07:00:38.289806Z",
+    "run_at_utc": "2026-08-23T07:48:16.060529Z",
     "status": "ok",
     "source": "NOAA MRMS Pass 2 + NOAA Stage IV",
     "sources": {
